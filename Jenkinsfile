@@ -7,6 +7,6 @@ node {
      sh label: 'Vidyasagar', script: 'mvn package'
    }
    stage ('archival') {
-   archiveArtifacts 'gameoflife-web/target/*.xml'
+   archiveArtifacts 'gameoflife-web/target/*.jar'
    }
 }
