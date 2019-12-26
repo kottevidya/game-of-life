@@ -9,4 +9,7 @@ node {
    stage ('archival') {
    archiveArtifacts 'gameoflife-web/target/*.war'
    }
+   stage ('Junittestcases') {
+   junit 'gameoflife-web/target/surefire-reports/*.xml'
+   }   
 }
