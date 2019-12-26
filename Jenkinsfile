@@ -1,20 +1,12 @@
 node {
    stage('SCM') {
-         git 'https://github.com/kottevidya/game-of-life.git'
+      git 'https://github.com/kottevidya/game-of-life.git'
+     }
+   
+   stage ('build the packages') {    
+     sh label: 'Vidyasagar', script: 'mvn package'
    }
-   
-   stage ('build the packages') {
-
-    
-
-          sh 'mvn package'
-   }
-
-   
-   
    stage ('archival') {
-
-
-
-         archive 'gameoflife-web/target/*.xml'
+   archiveArtifacts 'gameoflife-web/target/*.xml'
    }
+}
